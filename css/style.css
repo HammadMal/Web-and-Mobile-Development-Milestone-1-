@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', Arial, sans-serif; /* Added a modern font for a refined look */
-    background-color: #c1a9e4; /* Light purple tint */
+    background-color: #c1a9e4; Light purple tint
     color: #333;
     margin: 0;
     height: 100vh;
@@ -23,6 +23,7 @@ body {
 
 .login-container {
     background: linear-gradient(145deg, #e0d4f3, #f6f1fc); /* Subtle gradient */
+    
     padding: 30px; /* Increased padding */
     border-radius: 12px; /* Rounded corners for a modern feel */
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);

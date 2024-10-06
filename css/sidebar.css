@@ -6,89 +6,154 @@
     text-decoration: none;
 }
 
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #c1a9e4; /* Primary background color */
+    min-height: 100vh;
+    height: 100%;
+}
+
+/* Enhanced Sidebar Styling */
 .sidebar {
     position: fixed;
     left: -250px;
     width: 250px;
     height: 100%;
-    background: #800080; /* SchedUTrack Purple */
-    transition: left 0.5s ease;
+    background: rgba(128, 0, 128, 0.85); /* Purple glassmorphism */
+
+    background: linear-gradient(to right, #800080, #6a11cb); /* Horizontal gradient */
+    transition: left 0.5s ease, background 0.3s ease;
+    backdrop-filter: blur(12px); /* Frosted glass effect */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure sidebar stays above content */
 }
+
 .sidebar header {
-    font-size: 22px;
+    background: linear-gradient(135deg, #800080, #5e005e); /* Gradient purple header */
     color: white;
+    font-size: 22px;
     line-height: 70px;
     text-align: center;
-    background: #6a0080; /* Slightly darker purple */
-    user-select: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Soft glow */
 }
-.sidebar ul a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 65px;
-    font-size: 20px;
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Divider */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 18px;
     color: white;
-    padding-left: 40px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #530060; /* Even darker purple */
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    transition: background-color 0.4s;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    background: linear-gradient(145deg, rgba(128, 0, 128, 0.5), rgba(64, 0, 64, 0.5)); /* Subtle gradient */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2), -2px -2px 8px rgba(255, 255, 255, 0.1); /* Elevated shadow */
 }
-ul li:hover a {
-    background-color: #5a005a; /* Hover effect for the purple */
-    color: yellow; /* Text turns yellow on hover */
+
+.sidebar ul li a i {
+    margin-right: 15px; /* Space between icon and text */
+    font-size: 26px; /* Increased icon size */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-.sidebar ul a i {
-    margin-right: 16px;
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15); /* Light highlight */
+    box-shadow: 4px 4px 16px rgba(255, 255, 255, 0.1), -4px -4px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    transform: translateX(10px); /* Slide effect */
 }
+
+.sidebar ul li a:hover i {
+    transform: rotate(15deg); /* Rotate icon slightly */
+    color: #ffeb3b; /* Change icon color */
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:active {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    color: white;
+    transform: translateX(0); /* Keep centered */
+}
+
+/* Cancel Button Styling */
+#cancel {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    left: 215px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#cancel:hover {
+    color: #ffeb3b; /* Yellow on hover */
+}
+
+/* Toggle Button Styling */
 #check {
     display: none;
 }
+
 label #btn, label #cancel {
     position: absolute;
-    background: #800080;
+    background: #800080; /* Primary purple color */
     border-radius: 3px;
     cursor: pointer;
 }
+
 label #btn {
-    left: 10px; /* Adjusted for better alignment */
-    top: 2px; /* Adjusted for better alignment */
+    left: 10px;
+    top: 5px;
     font-size: 35px;
     color: white;
     padding: 6px 12px;
     transition: all .5s;
 }
-label #cancel {
-    z-index: 1111;
-    left: -195px; /* Unchanged */
-    top: -5px; /* Slight adjustment */
-    font-size: 30px;
-    color: #0a5275;
-    padding: 4px 9px;
-    transition: all .5s ease;
-}
+
 #check:checked ~ .sidebar {
     left: 0;
 }
+
 #check:checked ~ label #btn {
     left: 250px;
     opacity: 0;
     pointer-events: none;
 }
+
 #check:checked ~ label #cancel {
     left: 195px;
 }
+
+/* Section Styling */
 section {
     transition: margin-left 0.5s;
     padding: 20px;
-    background: white; /* Clear background for content area */
+    background: white;
     min-height: 100vh;
     margin-top: 50px; /* Height of the navbar */
 }
+
+/* Navbar Styling */
 .navbar {
-    background-color: #800080; /* Same as sidebar */
-    height: 50px;
+    background-color: #800080; /* Purple color for navbar */
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -98,107 +163,78 @@ section {
     left: 0;
     z-index: 1000;
 }
-.menu-icon {
+
+.navbar .menu-icon {
+    font-size: 30px; /* Larger menu icon size */
+    color: white;
     margin-left: 20px;
     cursor: pointer;
 }
-.title {
-    color: white;
+
+.navbar .title {
     font-size: 24px;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropbtn {
-    background-color: #800080;
     color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
-.dropdown-content {
+
+.navbar .dropdown .dropbtn {
+    background-color: #6a11cb; /* Button background */
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.navbar .dropdown .dropbtn:hover {
+    background: #9d78c2; /* Darken on hover */
+    transform: scale(1.05);
+}
+
+.navbar .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    left: -100px; /* Adjusted to prevent cutting off */
+    border-radius: 8px;
+    overflow: hidden;
 }
-.dropdown-content a {
-    color: black;
+
+.navbar .dropdown-content a {
+    color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background 0.3s ease, color 0.3s ease;
 }
-.dropdown-content a:hover {
-    background-color: #ddd;
-    color: yellow;
+
+.navbar .dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #444;
 }
-.dropdown:hover .dropdown-content {
+
+.navbar .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Dark/Light mode styles */
-.checkbox {
-    opacity: 0;
-    position: absolute;
+/* Dark Mode Styling */
+body.dark .sidebar {
+    background: rgba(44, 0, 44, 0.95); /* Darker purple */
 }
 
-.checkbox-label {
-    background-color: #111;
-    width: 50px;
-    height: 26px;
-    border-radius: 50px;
-    position: relative;
-    padding: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body.dark .navbar {
+    background: #3b003b; /* Dark purple navbar */
 }
 
-.fa-moon, .fa-sun {
-    font-size: 12px; /* Adjusted size for better fitting */
-    color: #f1c40f; /* Color for the moon icon */
+body.dark .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffeb3b;
 }
 
-.fa-sun {
-    color: #f39c12; /* Color for the sun icon */
+body.dark .navbar .title, 
+body.dark .navbar .menu-icon {
+    color: white; /* Ensure text is visible */
 }
-
-.checkbox-label .ball {
-    background-color: #fff;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .checkbox-label .ball {
-    transform: translateX(24px); /* Move the ball to indicate toggle */
-}
-
-/* Dark theme styles */
-body.dark {
-    background-color: #292c35; /* Dark background for the body */
-}
-
-body.dark .navbar, body.dark .sidebar {
-    background-color: #292c35; /* Dark theme for navbar and sidebar */
-}
-
-body.dark .dropdown-content a {
-    color: white; /* White text in dropdown in dark mode */
-}
-
-body.dark label, body.dark .title, body.dark h1 {
-    color: white; /* White text for labels and titles in dark mode */
-}
-
-  

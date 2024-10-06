@@ -4,22 +4,15 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color: #c1a9e4; /* Login page background color */
+    background-color: #c1a9e4; /* Login page background color */    
     min-height: 100vh;
     height: 100%;
 }
 
 /* Navbar Styling */
 .navbar {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    position: sticky; /* Make the navbar sticky */
-    top: 0;
-    z-index: 999; /* Ensure it stays above all other elements */
+    background: linear-gradient(to right, #800080, #6a11cb); /* Horizontal gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -34,16 +27,20 @@ body {
     font-size: 28px; /* Larger icon */
     color: white;
     transition: color 0.3s ease-in-out;
+
 }
 
 /* Dropdown Menu Adjustments */
 .dropdown {
     position: relative;
     display: inline-block;
+
+    
 }
 
 .dropdown .dropbtn {
     background: #6a11cb; /* Complementary color */
+    
     color: white;
     padding: 10px 16px;
     font-size: 16px;
@@ -51,6 +48,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease-in-out, transform 0.3s ease;
+    
 }
 
 .dropdown .dropbtn:hover {
@@ -103,17 +101,15 @@ body {
     color: #fff;
 }
 
-/* Enhanced Sidebar Styling */
+/* Sidebar styling */
 .sidebar {
     position: fixed;
     width: 250px;
     height: 100%;
     left: -250px;
-    background: rgba(44, 62, 80, 0.8); /* Semi-transparent dark background */
+    background: rgba(44, 62, 80, 0.85);
     transition: left 0.5s ease, background 0.3s ease;
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Light border for separation */
-    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px);
 }
 
 #check:checked ~ .sidebar {
@@ -121,54 +117,17 @@ body {
 }
 
 .sidebar header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
     color: white;
     text-align: center;
     line-height: 70px;
     font-size: 24px;
     font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); /* Soft glow effect */
 }
 
-.sidebar ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.sidebar ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Divider between items */
-}
-
-.sidebar ul li a {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    font-size: 18px;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.sidebar ul li a i {
-    margin-right: 15px; /* Space between icon and text */
-    font-size: 22px;
-    transition: transform 0.3s ease;
-}
-
-/* Sidebar Menu Item Hover Effects */
 .sidebar ul li a:hover {
-    background: rgba(255, 255, 255, 0.1); /* Light highlight */
-    color: #ffeb3b; /* Highlight text */
-    transform: translateX(5px); /* Slight move to the right */
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.sidebar ul li a:hover i {
-    transform: rotate(15deg); /* Slight rotation effect on icon */
-}
-
-/* Cancel Button Styling */
 #cancel {
     color: white;
     font-size: 24px;
@@ -176,24 +135,11 @@ body {
     top: 15px;
     left: 215px;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-#cancel:hover {
-    color: #ffeb3b; /* Change to yellow on hover */
-}
-
-/* Sidebar Navigation Links Hover Effect */
-.sidebar ul li a.active,
-.sidebar ul li a:active {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient highlight for active item */
-    color: white;
-    transform: translateX(0); /* No movement for active item */
 }
 
 /* Main content styles */
 .homepage-content {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    background-color: whitesmoke;
     padding: 40px;
     min-height: calc(100vh - 60px);
     margin-left: 0;
@@ -266,7 +212,6 @@ body {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Individual Rectangle Backgrounds */
 .rectangle-1 { background: linear-gradient(135deg, #FF7E5F, #FFB88C); }
 .rectangle-2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
 .rectangle-3 { background: linear-gradient(135deg, #8e44ad, #c0392b); }

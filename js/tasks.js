@@ -43,34 +43,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const colors = ['green', 'yellow', 'red', 'cyan', 'orange']; // List of color classes
 
     tasksData.forEach((course, index) => {
-        const header = document.createElement('div');
-        header.className = `task-header ${colors[index % colors.length]}`; // Cyclic color assignment
-        header.textContent = course.courseName;
-        container.appendChild(header);
+        // Create a new div for each task group
+        const taskGroup = document.createElement('div');
+        taskGroup.className = 'task-group';
 
+        // Create header for the course
+        const header = document.createElement('div');
+        header.className = `task-header ${colors[index % colors.length]}`;
+        header.textContent = course.courseName;
+
+        // Add header to the task group
+        taskGroup.appendChild(header);
+
+        // Add tasks to the group or show 'No tasks' message
         if (course.tasks.length > 0) {
             course.tasks.forEach(task => {
                 const taskItem = document.createElement('div');
                 taskItem.className = 'task-item';
                 taskItem.innerHTML = `
-                    <input type="checkbox" class="completed-checkbox" ${task.completed ? 'checked' : ''}>
                     <span class="task-name">${task.name}</span>
                     <span class="due-date">${task.dueDate}</span>
                 `;
-                container.appendChild(taskItem);
-
-                const checkbox = taskItem.querySelector('.completed-checkbox');
-                checkbox.addEventListener('change', function() {
-                    taskItem.style.backgroundColor = this.checked ? 'lightgreen' : '#ffcccc'; // Light red for unchecked
-                });
+                taskGroup.appendChild(taskItem);
             });
         } else {
             const noTasks = document.createElement('div');
             noTasks.className = 'task-item no-tasks';
             noTasks.textContent = 'No tasks assigned';
-            container.appendChild(noTasks);
+            taskGroup.appendChild(noTasks);
         }
+
+        // Append each task group to the container
+        container.appendChild(taskGroup);
     });
 });
-
-
+    

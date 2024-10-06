@@ -1,61 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+/* ======================= Global Styles ======================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #c1a9e4; /* Keep the original background color */
+    min-height: 100vh;
+    height: 100%;
+}
+
+/* ======================= Navbar Styles ======================= */
+.navbar {
+    background: linear-gradient(to right, #800080, #6a11cb); /* Horizontal gradient */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    position: sticky; /* Make the navbar sticky */
+    top: 0;
+    z-index: 999;
+}
+
+.navbar .title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .menu-icon {
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+/* ======================= Sidebar Styles ======================= */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    background: rgba(128, 0, 128, 0.9); /* Semi-transparent purple */
+    transition: left 0.5s ease, background 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#check:checked ~ .sidebar {
+    left: 0; /* Show sidebar */
+}
+
+.sidebar header {
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Divider */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a i {
+    margin-right: 15px; /* Space between icon and text */
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px); /* Slide effect */
+}
+
+.sidebar ul li a:hover i {
+    transform: rotate(15deg);
+}
+
+/* ======================= Tasks Section Styles ======================= */
+.tasks-section {
+    background-color: whitesmoke;
+    padding: 30px;
+    margin-top: 80px; /* Keep space for the navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Title Styling */
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #800080; /* Matches SchedUTrack's theme */
+    font-weight: bold;
+}
+
+/* Grid Layout for Task Groups */
+.task-group-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between task groups */
+    width: 100%; /* Full width of container */
+}
+
+/* Task Group Styles */
+.task-group {
+    background: #ffffff; /* White background for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Task Header Styles */
 .task-header {
     padding: 15px;
-    border-radius: 5px;
     font-size: 1.2em;
     text-align: center;
-    height: 35px;
+    height: 50px;
     color: white;
-    gap: 10px;
-    margin-bottom: 20px; /* Adds spacing between headings and tasks */
+    background-color: rgba(128, 0, 128, 0.8); /* Darker purple for text contrast */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Darker gradients for headers */
-.green {
-    background: linear-gradient(#ed66dd, #9f0fb9);
-}
+/* Task Header Colors */
+.green { background: linear-gradient(135deg, #ed66dd, #9f0fb9); }
+.yellow { background: linear-gradient(135deg, #3a72f5, #0113d8); }
+.red { background: linear-gradient(135deg, #ff5e57, #b30000); }
+.cyan { background: linear-gradient(135deg, #00ced1, #005757); }
+.orange { background: linear-gradient(135deg, #ffa500, #b36f00); }
 
-.yellow {
-    background: linear-gradient(#3a72f5, #0113d8);
-}
-
-.red {
-    background: linear-gradient(#ff5e57, #b30000);
-}
-
-.cyan {
-    background: linear-gradient(#00ced1, #005757);
-}
-
-.orange {
-    background: linear-gradient(#ffa500, #b36f00);
-}
-
+/* Task Item Styles */
 .task-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #e0e0e0;
-    background-color: #ffcccc; /* default to light red */
-    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 30px;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
 }
 
-/* Hover effect to create a pop-up effect */
+.task-item span {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Task Item Hover Effect */
 .task-item:hover {
-    transform: scale(1.05); /* Makes the item pop up */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    background: #f9f9f9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* No-Tasks Style */
 .task-item.no-tasks {
     justify-content: center;
-    background-color: white;
+    background-color: #f3f3f3;
+    font-weight: bold;
+    color: #888;
 }
 
-.task-item.no-tasks:hover {
-    background-color: gray;
-    color: white;
+/* Task Group Hover Effect */
+.task-group:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* ======================= Utility Classes ======================= */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.main-content{
+    background-color: whitesmoke;
 }
