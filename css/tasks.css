@@ -1,0 +1,61 @@
+.task-header {
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    height: 35px;
+    color: white;
+    gap: 10px;
+    margin-bottom: 20px; /* Adds spacing between headings and tasks */
+}
+
+/* Darker gradients for headers */
+.green {
+    background: linear-gradient(#ed66dd, #9f0fb9);
+}
+
+.yellow {
+    background: linear-gradient(#3a72f5, #0113d8);
+}
+
+.red {
+    background: linear-gradient(#ff5e57, #b30000);
+}
+
+.cyan {
+    background: linear-gradient(#00ced1, #005757);
+}
+
+.orange {
+    background: linear-gradient(#ffa500, #b36f00);
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffcccc; /* default to light red */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+/* Hover effect to create a pop-up effect */
+.task-item:hover {
+    transform: scale(1.05); /* Makes the item pop up */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+.task-item.no-tasks {
+    justify-content: center;
+    background-color: white;
+}
+
+.task-item.no-tasks:hover {
+    background-color: gray;
+    color: white;
+}

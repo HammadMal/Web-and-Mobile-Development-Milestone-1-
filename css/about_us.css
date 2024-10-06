@@ -1,0 +1,157 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5e5f7; /* Consistent background color */
+    font-size: 25px;
+}
+
+/* Layout for main content and image */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px; /* Offset for navbar */
+    transition: margin-left 0.5s; /* Smooth transition for sidebar toggle */
+}
+
+/* Styles for the main image */
+.about-image {
+    width: 50%;
+    height: 100vh;
+    object-fit: cover;
+    border: 5px solid #800080; /* Adds a black border */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.about-image:hover {
+    transform: scale(1.05); /* Scales image on hover */
+}
+
+/* Styles for the text next to the image */
+.about-text {
+    width: 60%; /* Increase the width of the text section */
+    padding: 40px;
+    background-color: rgba(233, 229, 255, 0.5);
+    background-image: repeating-linear-gradient(
+        45deg, 
+        rgba(104, 86, 179, 0.5) 25%, 
+        transparent 25%, 
+        transparent 75%, 
+        rgba(104, 86, 179, 0.5) 75%
+    );
+    background-size: 20px 20px;
+}
+
+.text-content { /* New div for text content */
+    font-size: 30px;
+    line-height: 1.8;
+    text-align: justify;
+    color: black; /* Ensuring text color is fully opaque */
+}
+
+/* Heading styles */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Icon for values (book icon) */
+.value-icon {
+    width: 20px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Footer styles for contact information */
+footer.contact-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: repeating-linear-gradient(0deg, #800080, #6a0080); /* Purple gradient */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 120px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+footer.contact-bar:hover {
+    opacity: 0.8; /* Increase opacity on hover */
+}
+
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.contact-item i {
+    margin-right: 5px;
+}
+
+.branding {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+    .about-text {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #check:checked ~ .content-wrapper {
+        margin-left: 0;
+    }
+}
+
+/* Adjust content position based on sidebar state */
+#check:checked ~ .content-wrapper {
+    margin-left: 250px; /* Ensure proper alignment when sidebar is open */
+}

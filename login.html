@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SchedUTrack</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-page">
+        <img src="Resources/logo.png" alt="SchedUTrack Logo" class="login-logo">
+        <div class="login-container">
+            <form id="loginForm">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="input-group">
+                    <button type="button" onclick="validateLogin()">Login</button>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <div id="errorMessage" class="error-message">Invalid credentials. Please try again or use the 'Forgot password?' link.</div>
+            </form>
+        </div>
+
+        <div class = "scrollspace"></div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

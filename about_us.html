@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - SchedUTrack</title>
+    <link rel="stylesheet" href="css/about_us.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <label for="check" class="menu-icon">
+            <i class="fas fa-bars" id="btn"></i>
+        </label>
+        <div class="title">About Us</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="logout()">Logout</a>
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkbox for Sidebar Toggle -->
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <header>SchedUTrack</header>
+        <ul>
+            <li><a href="about_us.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+            <li><a href="homepage.html"><i class="fas fa-home"></i>Homepage</a></li>
+            <li><a href="attendance.html"><i class="fas fa-user-check"></i>Attendance</a></li>
+            <li><a href="tasks.html"><i class="fas fa-tasks"></i>Tasks</a></li>
+            <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i>Schedule</a></li>
+            <li><a href="grades.html"><i class="fas fa-chart-bar"></i>Grades</a></li>
+            <li><a href="add_task.html"><i class="fas fa-plus-circle"></i>Add Task</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-wrapper">
+        <img class="about-image" src="Resources/habib_image.jpeg" alt="Habib University">
+        <div class="about-text">
+            <h1>About SchedUTrack</h1>
+            <p>Welcome to SchedUTrack! Here’s a brief overview of what we do...</p>
+            
+            <h2>Our Mission</h2>
+            <p>SchedUTrack is dedicated to enhancing the academic journey of university students by providing an integrated, user-friendly platform that centralizes academic management. Our mission is to empower students to seamlessly organize their schedules, track attendance, manage tasks, and monitor grades, thereby fostering a productive and successful academic experience.</p>
+            
+            <h2>About Us</h2>
+            <p>Founded at Habib University, SchedUTrack arose from the pressing need to simplify the complexities university students face in managing their academic lives. We understand that juggling multiple courses, deadlines, and attendance can be overwhelming. SchedUTrack consolidates essential academic functions into one accessible platform, enabling students to stay on top of their responsibilities and avoid academic penalties.</p>
+            <br>
+            <p><img src="Resources/book_icon.png" alt="Book Icon" class="value-icon"> <strong>Innovation:</strong> We strive to continually improve and innovate, ensuring our platform meets the evolving needs of modern students.</p> <br>
+            <p><img src="Resources/book_icon.png" alt="Book Icon" class="value-icon"> <strong>Reliability:</strong> SchedUTrack is built to be a dependable resource for students, providing accurate and timely information to support their academic endeavors.</p> <br>
+            <p><img src="Resources/book_icon.png" alt="Book Icon" class="value-icon"> <strong>User-Centric Design:</strong> We prioritize intuitive design and functionality, ensuring that our platform is easy to use for all students, enhancing their organizational skills and academic productivity.</p> <br>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="contact-bar">
+        <div class="footer-content">
+            <p class="footer-heading">For any queries contact us at:</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone: (123) 456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email: support@schedutrack.com</span>
+                </div>
+            </div>
+            <div class="branding">
+                <span>SchedUTrack</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script src="js/sidebar.js"></script>
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

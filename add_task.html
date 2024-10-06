@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task - SchedUTrack</title>
+    <link rel="stylesheet" href="css/add_task.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <label for="check" class="menu-icon">
+            <i class="fas fa-bars" id="btn"></i>
+        </label>
+        <div class="title">Add Task</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="logout()">Logout</a>
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>SchedUTrack</header>
+        <ul>
+            <li><a href="add_task.html"><i class="fas fa-plus-circle"></i>Add Task</a></li>
+            <li><a href="homepage.html"><i class="fas fa-home"></i>Homepage</a></li>
+            <li><a href="attendance.html"><i class="fas fa-user-check"></i>Attendance</a></li>
+            <li><a href="tasks.html"><i class="fas fa-tasks"></i>Tasks</a></li>
+            <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i>Schedule</a></li>
+            <li><a href="grades.html"><i class="fas fa-chart-bar"></i>Grades</a></li>
+            <li><a href="about_us.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+        </ul>
+    </div>
+    <section>
+        <h1>Add a New Task</h1>
+        <form>
+            <label for="taskName">Task Name:</label><br>
+            <input type="text" id="taskName" name="taskName"><br><br>
+
+            <label for="dueDate">Due Date:</label><br>
+            <input type="date" id="dueDate" name="dueDate"><br><br>
+
+            <label for="priority">Priority:</label><br>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+
+            <input type="submit" value="Add Task">
+        </form>
+    </section>
+    <script src="js/sidebar.js"></script>
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

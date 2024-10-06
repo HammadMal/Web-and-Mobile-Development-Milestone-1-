@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule - SchedUTrack</title>
+    <link rel="stylesheet" href="css/schedule.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <label for="check" class="menu-icon">
+            <i class="fas fa-bars" id="btn"></i>
+        </label>
+        <div class="title">Schedule</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="logout()">Logout</a>
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                        <span class="ball"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header>SchedUTrack</header>
+        <ul>
+            <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i>Schedule</a></li>
+            <li><a href="homepage.html"><i class="fas fa-home"></i>Homepage</a></li>
+            <li><a href="attendance.html"><i class="fas fa-user-check"></i>Attendance</a></li>
+            <li><a href="tasks.html"><i class="fas fa-tasks"></i>Tasks</a></li>
+            <li><a href="grades.html"><i class="fas fa-chart-bar"></i>Grades</a></li>
+            <li><a href="add_task.html"><i class="fas fa-plus-circle"></i>Add Task</a></li>
+            <li><a href="about_us.html"><i class="fas fa-info-circle"></i>About Us</a></li>
+        </ul>
+    </div>
+
+    <section class="timetable">
+        <div class="grid-container">
+            <!-- Timetable Header and Times -->
+            <div class="grid-item invisible"></div>
+            <div class="grid-item">Monday</div>
+            <div class="grid-item">Tuesday</div>
+            <div class="grid-item">Wednesday</div>
+            <div class="grid-item">Thursday</div>
+            <div class="grid-item">Friday</div>
+            <div class="grid-item">8:00 AM</div>
+            <div class="grid-item" id="mon-8am"></div>
+            <div class="grid-item" id="tue-8am"></div>
+            <div class="grid-item" id="wed-8am"></div>
+            <div class="grid-item" id="thu-8am"></div>
+            <div class="grid-item" id="fri-8am"></div>
+            <div class="grid-item">9:00 AM</div>
+            <div class="grid-item" id="mon-9am"></div>
+            <div class="grid-item" id="tue-9am"></div>
+            <div class="grid-item" id="wed-9am"></div>
+            <div class="grid-item" id="thu-9am"></div>
+            <div class="grid-item" id="fri-9am"></div>
+            <div class="grid-item">10:00 AM</div>
+            <div class="grid-item" id="mon-10am"></div>
+            <div class="grid-item" id="tue-10am"></div>
+            <div class="grid-item" id="wed-10am"></div>
+            <div class="grid-item" id="thu-10am"></div>
+            <div class="grid-item" id="fri-10am"></div>
+            <div class="grid-item">11:00 AM</div>
+            <div class="grid-item" id="mon-11am"></div>
+            <div class="grid-item" id="tue-11am"></div>
+            <div class="grid-item" id="wed-11am"></div>
+            <div class="grid-item" id="thu-11am"></div>
+            <div class="grid-item" id="fri-11am"></div>
+            <div class="grid-item">12:00 PM</div>
+            <div class="grid-item" id="mon-12pm"></div>
+            <div class="grid-item" id="tue-12pm"></div>
+            <div class="grid-item" id="wed-12pm"></div>
+            <div class="grid-item" id="thu-12pm"></div>
+            <div class="grid-item" id="fri-12pm"></div>
+            <div class="grid-item">1:00 PM</div>
+            <div class="grid-item" id="mon-1pm"></div>
+            <div class="grid-item" id="tue-1pm"></div>
+            <div class="grid-item" id="wed-1pm"></div>
+            <div class="grid-item" id="thu-1pm"></div>
+            <div class="grid-item" id="fri-1pm"></div>
+            <div class="grid-item">2:00 PM</div>
+            <div class="grid-item" id="mon-2pm"></div>
+            <div class="grid-item" id="tue-2pm"></div>
+            <div class="grid-item" id="wed-2pm"></div>
+            <div class="grid-item" id="thu-2pm"></div>
+            <div class="grid-item" id="fri-2pm"></div>
+            <div class="grid-item">3:00 PM</div>
+            <div class="grid-item" id="mon-3pm"></div>
+            <div class="grid-item" id="tue-3pm"></div>
+            <div class="grid-item" id="wed-3pm"></div>
+            <div class="grid-item" id="thu-3pm"></div>
+            <div class="grid-item" id="fri-3pm"></div>
+            <div class="grid-item">4:00 PM</div>
+            <div class="grid-item" id="mon-4pm"></div>
+            <div class="grid-item" id="tue-4pm"></div>
+            <div class="grid-item" id="wed-4pm"></div>
+            <div class="grid-item" id="thu-4pm"></div>
+            <div class="grid-item" id="fri-4pm"></div>
+            <div class="grid-item">5:00 PM</div>
+            <div class="grid-item" id="mon-5pm"></div>
+            <div class="grid-item" id="tue-5pm"></div>
+            <div class="grid-item" id="wed-5pm"></div>
+            <div class="grid-item" id="thu-5pm"></div>
+            <div class="grid-item" id="fri-5pm"></div>
+        </div>
+    </section>
+    <div class="button-container">
+        <a href="#" id="toggle-time" class="button">Military Time</a>
+        <a href="#" id="show-absences" class="button">Display Attendance</a>        
+        <a href="#" class="button">Schedule Design Mode</a>
+    </div>
+
+    <script src="js/schedule.js"></script>
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
